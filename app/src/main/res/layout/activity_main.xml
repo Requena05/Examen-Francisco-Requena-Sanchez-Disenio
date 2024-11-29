@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#FCE4EC"
+    android:padding="05dp"
+    >
+
+    <ImageButton
+        android:id="@+id/añadir"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="320dp"
+        android:layout_marginBottom="72dp"
+        android:background="@drawable/borde_redondo"
+        android:src="@drawable/baseline_add_24"
+        android:translationZ="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/cabecera"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#FFFFFF"
+        android:elevation="10dp"
+        >
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/baseline_arrow_back_ios_24"
+            android:layout_marginTop="05dp"
+            android:layout_marginStart="5dp"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Añadir Pokémon"
+            android:fontFamily="sans-serif"
+            android:textFontWeight="800"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+
+            />
+    </LinearLayout>
+<!--        En esta parte va todo el formulario-->
+
+
+
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/cabecera"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:elevation="10dp"
+    android:padding="10dp"
+    android:background="#F3E5F5"
+    android:layout_margin="25dp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        >
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/camponombrepokemon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:helperText="Nombre Pokemon"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nombrepokemon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:inputType="text"
+                android:textSize="20dp">
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/camponombre_entrenador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:helperText="Nombre Entrenador"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nombre_entrenador"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:inputType="text"
+                android:textSize="20dp">
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="10dp"
+            >
+            <Spinner
+                android:id="@+id/tipos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+
+                />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/estaturapokemon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint=""
+                app:helperText="Estatura">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Estatura"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="sans-serif-medium"
+                    android:inputType="number"
+                    android:textSize="20dp">
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/campocomentarios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint=""
+            app:helperText="Comentarios"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/comentarios"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:fontFamily="sans-serif-medium"
+                android:inputType="textMultiLine"
+                android:textSize="20dp">
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/campofecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:endIconMode="custom"
+            app:helperText="Fecha Captura "
+            android:layout_margin="10dp"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fecha"
+                android:focusable="false"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+
+</ScrollView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
